@@ -26,8 +26,18 @@ function createGrid(squaresPerSide){
         square.style.width = `${squareSize}px`;
         square.style.height = `${squareSize}px`;
 
+        square.dataset.hovers = 0;
+
         square.addEventListener("mouseenter", () =>{
-            square.style.backgroundColor = "black";
+            let hovers = Number(square.dataset.hovers);
+            if(hovers < 10) hovers += 1;
+            square.dataset.hovers = hovers;
+
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+
+            square.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${hovers * 0.1})`;
         });
 
         grid.appendChild(square);
