@@ -12,7 +12,7 @@ resizeButton.addEventListener("click", function(){
 });
 
 function createGrid(squaresPerSide){
-    const grid = document.querySelector(".grid");
+    const grid = document.querySelector("#grid");
 
     grid.innerHTML="";
 
